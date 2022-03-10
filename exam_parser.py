@@ -105,8 +105,11 @@ def convert_pdf_to_txt(file_path):
     """
     with fitz.open(file_path) as doc:
         text = ""
+        i = 1
         for page in doc:
-            text += page.get_text()
+            if i > 2:
+                text += page.get_text()
+            i += 1
     return text
 
 
