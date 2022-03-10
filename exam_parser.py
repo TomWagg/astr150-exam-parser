@@ -52,7 +52,7 @@ def split_student_submissions(input_path, output_path):
         # and for each answer in the exam
         for i, answer in enumerate(student["answers"]):
             # create a new file and write their name and answers
-            file_name = output_path + student["file"].replace(".pdf", "_q{}.txt".format(i + 1))
+            file_name = output_path + "q{}_".format(i + 1) + student["file"].replace(".pdf", ".txt")
             with open(file_name, "w") as split_file:
                 split_file.write(student["name"] + "\n---\n\n")
                 split_file.write(answer)
