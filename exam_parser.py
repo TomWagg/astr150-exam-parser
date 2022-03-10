@@ -1,3 +1,5 @@
+""" Exam parser for ASTR150 - Tom Wagg, 2022 """
+
 import re
 import argparse
 import os
