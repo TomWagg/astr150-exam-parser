@@ -78,14 +78,14 @@ def read_student_submission(file_path):
     file_str = convert_pdf_to_txt(file_path)
 
     # split the file on the Answer string
-    answers = re.split(r"=* Answer [0-9]* =*", file_str)
+    answers = re.split(r"=* Question [0-9]* =*", file_str)
     # strip off any leading or trailing newlines
     answers = [answer.strip() for answer in answers]
 
     # split into name and answers
     name, answers = answers[0], answers[1:]
     # strip off the start so you just have the name
-    name = name.split("Full name:")[1].strip()
+    name = name.split("Full Name:")[1].strip()
 
     return name, answers
 
